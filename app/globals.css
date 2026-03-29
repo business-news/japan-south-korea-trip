@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════
+   Japan × South Korea — Travel Site
+   Design Tokens & Global Styles
+   ═══════════════════════════════════════════════════ */
+
+:root {
+  /* ─── Stone — Neutrals & Text ─── */
+  --stone-50:  #fafaf9;
+  --stone-100: #f5f5f4;
+  --stone-200: #e7e5e4;
+  --stone-300: #d6d3d1;
+  --stone-400: #a8a29e;
+  --stone-500: #78716c;
+  --stone-600: #57534e;
+  --stone-700: #44403c;
+  --stone-800: #292524;
+  --stone-900: #1c1917;
+
+  /* ─── Ocean Celadon — Primary Accent ─── */
+  --ocean-50:  #f0fdfa;
+  --ocean-100: #ccfbf1;
+  --ocean-200: #99f6e4;
+  --ocean-300: #5eead4;
+  --ocean-400: #2dd4bf;
+  --ocean-500: #14b8a6;
+  --ocean-600: #0d9488;
+
+  /* ─── Sakura — Secondary Accent ─── */
+  --sakura-50:  #fdf2f8;
+  --sakura-100: #fce7f3;
+  --sakura-200: #fbcfe8;
+  --sakura-300: #f9a8d4;
+  --sakura-400: #f472b6;
+  --sakura-500: #ec4899;
+
+  /* ─── Matcha — Success / Nature ─── */
+  --matcha-50:  #f0fdf4;
+  --matcha-100: #dcfce7;
+  --matcha-200: #bbf7d0;
+  --matcha-300: #86efac;
+  --matcha-400: #4ade80;
+  --matcha-500: #22c55e;
+  --matcha-600: #16a34a;
+
+  /* ─── Hanok Warm — Warning / Highlight ─── */
+  --hanok-50:  #fffbeb;
+  --hanok-100: #fef3c7;
+  --hanok-200: #fde68a;
+  --hanok-300: #fcd34d;
+  --hanok-400: #fbbf24;
+  --hanok-500: #f59e0b;
+
+  /* ─── Indigo Ink — Info / Links ─── */
+  --ink-50:  #eef2ff;
+  --ink-100: #e0e7ff;
+  --ink-200: #c7d2fe;
+  --ink-300: #a5b4fc;
+  --ink-400: #818cf8;
+  --ink-500: #6366f1;
+  --ink-600: #4f46e5;
+
+  /* ─── Semantic Tokens ─── */
+  --bg-primary:   var(--stone-50);
+  --bg-secondary: #ffffff;
+  --bg-elevated:  #ffffff;
+
+  --text-primary:   var(--stone-800);
+  --text-secondary: var(--stone-500);
+  --text-muted:     var(--stone-400);
+
+  --border:        var(--stone-200);
+  --border-subtle: var(--stone-100);
+
+  --accent:       var(--ocean-500);
+  --accent-hover: var(--ocean-600);
+  --accent-light: var(--ocean-50);
+
+  --success: var(--matcha-500);
+  --warning: var(--hanok-400);
+  --error:   #ef4444;
+  --info:    var(--ink-400);
+
+  /* ─── Radii ─── */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* ─── Shadows ─── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.10);
+
+  /* ─── Legacy mappings for Tailwind ─── */
+  --background: var(--bg-primary);
+  --foreground: var(--text-primary);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-dm-serif-display);
+  --font-jp: var(--font-noto-sans-jp);
+  --font-kr: var(--font-noto-sans-kr);
+  --font-mono: var(--font-geist-mono);
+
+  /* ─── Custom Tailwind colour tokens ─── */
+  --color-stone-50: var(--stone-50);
+  --color-stone-100: var(--stone-100);
+  --color-stone-200: var(--stone-200);
+  --color-stone-300: var(--stone-300);
+  --color-stone-400: var(--stone-400);
+  --color-stone-500: var(--stone-500);
+  --color-stone-600: var(--stone-600);
+  --color-stone-700: var(--stone-700);
+  --color-stone-800: var(--stone-800);
+  --color-stone-900: var(--stone-900);
+
+  --color-ocean-50: var(--ocean-50);
+  --color-ocean-100: var(--ocean-100);
+  --color-ocean-200: var(--ocean-200);
+  --color-ocean-300: var(--ocean-300);
+  --color-ocean-400: var(--ocean-400);
+  --color-ocean-500: var(--ocean-500);
+  --color-ocean-600: var(--ocean-600);
+
+  --color-sakura-50: var(--sakura-50);
+  --color-sakura-100: var(--sakura-100);
+  --color-sakura-200: var(--sakura-200);
+  --color-sakura-300: var(--sakura-300);
+  --color-sakura-400: var(--sakura-400);
+  --color-sakura-500: var(--sakura-500);
+
+  --color-matcha-50: var(--matcha-50);
+  --color-matcha-100: var(--matcha-100);
+  --color-matcha-200: var(--matcha-200);
+  --color-matcha-300: var(--matcha-300);
+  --color-matcha-400: var(--matcha-400);
+  --color-matcha-500: var(--matcha-500);
+  --color-matcha-600: var(--matcha-600);
+
+  --color-hanok-50: var(--hanok-50);
+  --color-hanok-100: var(--hanok-100);
+  --color-hanok-200: var(--hanok-200);
+  --color-hanok-300: var(--hanok-300);
+  --color-hanok-400: var(--hanok-400);
+  --color-hanok-500: var(--hanok-500);
+
+  --color-ink-50: var(--ink-50);
+  --color-ink-100: var(--ink-100);
+  --color-ink-200: var(--ink-200);
+  --color-ink-300: var(--ink-300);
+  --color-ink-400: var(--ink-400);
+  --color-ink-500: var(--ink-500);
+  --color-ink-600: var(--ink-600);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-light: var(--accent-light);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+
+  /* ─── Radius tokens ─── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* ─── Base Styles ─── */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-dm-sans), 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--ocean-200);
+  color: var(--stone-800);
+}
+
+/* ─── Focus ring ─── */
+:focus-visible {
+  outline: 2px solid var(--ocean-400);
+  outline-offset: 2px;
+}
+
+/* ─── Hide scrollbar utility ─── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Scrollbar (webkit) ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--stone-300);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--stone-400);
+}
